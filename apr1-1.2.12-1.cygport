@@ -1,0 +1,35 @@
+ORIG_PN="apr"
+
+DESCRIPTION="Apache Portable Runtime"
+HOMEPAGE="http://apr.apache.org/"
+SRC_URI="mirror://apache/apr/${ORIG_PN}-${PV}.tar.bz2"
+
+PKG_NAMES="${PN} lib${PN} lib${PN}-devel"
+PKG_HINTS="setup lib devel"
+PKG_CONTENTS[0]="usr/share/doc/"
+PKG_CONTENTS[1]="usr/bin/*.dll"
+PKG_CONTENTS[2]="usr/bin/*-config usr/include/ usr/lib/ usr/share/apr-${PVP[0]}-build/"
+
+DIFF_EXCLUDES="apr_private.h.in"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+
+	cd ${B}
+	cygconf \
+		--disable-static \
+		--enable-layout=Cygwin \
+		--with-installbuilddir=/usr/share/apr-${PVP[0]}-build
+
+	sed -i 's,$(top_builddir)/libtool,$(apr_builddir)/libtool,' ${B}/build/apr_rules.mk
+
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -f ${D}/usr/lib/apr.exp
+}

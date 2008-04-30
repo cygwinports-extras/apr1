@@ -1,0 +1,114 @@
+apr1
+------------------------------------------
+The mission of the Apache Portable Runtime (APR) project is to create 
+and maintain software libraries that provide a predictable and 
+consistent interface to underlying platform-specific implementations. 
+The primary goal is to provide an API to which software developers may 
+code and be assured of predictable if not identical behaviour regardless 
+of the platform on which their software is built, relieving them of the 
+need to code special-case conditions to work around or take advantage of 
+platform-specific deficiencies or features.
+
+Runtime requirements:
+  cygwin-1.5.25-11
+
+Build requirements:
+  autoconf2.5-2.61-1
+  automake1.10-1.10.1-1
+  binutils-20060817-1
+  cygport-0.3.9-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  libtool-2.2.2-2
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://apr.apache.org/
+
+Canonical download:
+  http://archive.apache.org/dist/apr/
+
+-------------------------------------------
+
+Build instructions:
+  unpack apr1-1.2.12-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./apr1-1.2.12-X.cygport all
+
+This will create:
+  /usr/src/apr1-1.2.12-X-src.tar.bz2
+  /usr/src/apr1-1.2.12-X.tar.bz2
+  /usr/src/libapr1-1.2.12-X.tar.bz2
+  /usr/src/libapr1-devel-1.2.12-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(apr)
+  /usr/share/doc/apr1-1.2.12/Changes
+  /usr/share/doc/apr1-1.2.12/LICENSE
+
+(libapr1)
+  /usr/bin/cygapr-1-0.dll
+
+(libapr1-devel)
+  /usr/bin/apr-1-config
+  /usr/include/apr-1/apr.h
+  /usr/include/apr-1/apr_allocator.h
+  /usr/include/apr-1/apr_atomic.h
+  /usr/include/apr-1/apr_dso.h
+  /usr/include/apr-1/apr_env.h
+  /usr/include/apr-1/apr_errno.h
+  /usr/include/apr-1/apr_file_info.h
+  /usr/include/apr-1/apr_file_io.h
+  /usr/include/apr-1/apr_fnmatch.h
+  /usr/include/apr-1/apr_general.h
+  /usr/include/apr-1/apr_getopt.h
+  /usr/include/apr-1/apr_global_mutex.h
+  /usr/include/apr-1/apr_hash.h
+  /usr/include/apr-1/apr_inherit.h
+  /usr/include/apr-1/apr_lib.h
+  /usr/include/apr-1/apr_mmap.h
+  /usr/include/apr-1/apr_network_io.h
+  /usr/include/apr-1/apr_poll.h
+  /usr/include/apr-1/apr_pools.h
+  /usr/include/apr-1/apr_portable.h
+  /usr/include/apr-1/apr_proc_mutex.h
+  /usr/include/apr-1/apr_random.h
+  /usr/include/apr-1/apr_ring.h
+  /usr/include/apr-1/apr_shm.h
+  /usr/include/apr-1/apr_signal.h
+  /usr/include/apr-1/apr_strings.h
+  /usr/include/apr-1/apr_support.h
+  /usr/include/apr-1/apr_tables.h
+  /usr/include/apr-1/apr_thread_cond.h
+  /usr/include/apr-1/apr_thread_mutex.h
+  /usr/include/apr-1/apr_thread_proc.h
+  /usr/include/apr-1/apr_thread_rwlock.h
+  /usr/include/apr-1/apr_time.h
+  /usr/include/apr-1/apr_user.h
+  /usr/include/apr-1/apr_version.h
+  /usr/include/apr-1/apr_want.h
+  /usr/lib/libapr-1.dll.a
+  /usr/lib/libapr-1.la
+  /usr/lib/pkgconfig/apr-1.pc
+  /usr/share/apr-1-build/apr_rules.mk
+  /usr/share/apr-1-build/libtool
+  /usr/share/apr-1-build/make_exports.awk
+  /usr/share/apr-1-build/make_var_export.awk
+  /usr/share/apr-1-build/mkdir.sh
+
+------------------
+
+Port Notes:
+
+----- version 1.2.12-1 -----
+Version bump.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
