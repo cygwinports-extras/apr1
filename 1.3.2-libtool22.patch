@@ -1,0 +1,28 @@
+--- origsrc/apr-1.3.2/configure.in	2008-07-31 16:42:34.203125000 -0500
++++ src/apr-1.3.2/configure.in	2008-07-31 16:45:25.250000000 -0500
+@@ -13,13 +13,7 @@
+ dnl 
+ dnl Include our own M4 macros along with those for libtool
+ dnl 
+-sinclude(build/apr_common.m4)
+-sinclude(build/apr_network.m4)
+-sinclude(build/apr_threads.m4)
+-sinclude(build/apr_win32.m4)
+-sinclude(build/apr_hints.m4)
+-sinclude(build/libtool.m4)
+-sinclude(build/ltsugar.m4)
++AC_CONFIG_MACRO_DIR(build)
+ 
+ dnl Hard-coded inclusion at the tail end of apr_private.h:
+ AH_BOTTOM([
+@@ -198,8 +192,8 @@
+ 
+ if test "x$use_libtool" = "xyes"; then
+       lt_compile='$(LIBTOOL) $(LTFLAGS) --mode=compile $(COMPILE) -o $@ -c $< && touch $@'
+-      LT_VERSION="-version-info `$get_version libtool $version_hdr APR`"
+-      link="\$(LIBTOOL) \$(LTFLAGS) --mode=link \$(LT_LDFLAGS) \$(COMPILE) \$(LT_VERSION) \$(ALL_LDFLAGS) -o \$@"
++      lt_version="-version-info `$get_version libtool $version_hdr APR`"
++      link="\$(LIBTOOL) \$(LTFLAGS) --mode=link \$(LT_LDFLAGS) \$(COMPILE) \$(lt_version) -no-undefined \$(ALL_LDFLAGS) -o \$@"
+       so_ext='lo'
+       lib_target='-rpath $(libdir) $(OBJECTS)'
+       export_lib_target='-rpath \$(libdir) \$(OBJECTS)'

@@ -1,0 +1,23 @@
+--- origsrc/apr-1.2.12/config.layout	2004-11-24 16:51:51.000000000 -0600
++++ src/apr-1.2.12/config.layout	2008-04-29 21:42:53.203125000 -0500
+@@ -229,3 +229,20 @@
+     infodir:       ${exec_prefix}/share/info
+     libsuffix:    -${APR_MAJOR_VERSION}
+ </Layout>
++
++# Cygwin layout
++<Layout Cygwin>
++    prefix:        /usr
++    exec_prefix:   ${prefix}
++    bindir:        ${exec_prefix}/bin
++    sbindir:       ${exec_prefix}/bin
++    libdir:        ${exec_prefix}/lib
++    libexecdir:    ${exec_prefix}/apr-${APR_MAJOR_VERSION}/modules
++    mandir:        ${prefix}/share/man
++    sysconfdir:    /etc
++    datadir:       ${prefix}/share
++    installbuilddir: ${datadir}/apr-${APR_MAJOR_VERSION}-build
++    includedir:    ${prefix}/include/apr-${APR_MAJOR_VERSION}
++    localstatedir: /var
++    libsuffix:     -${APR_MAJOR_VERSION}
++</Layout>

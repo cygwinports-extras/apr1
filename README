@@ -10,13 +10,13 @@ need to code special-case conditions to work around or take advantage of
 platform-specific deficiencies or features.
 
 Runtime requirements:
-  cygwin-1.5.25-11
+  cygwin-1.5.25-15
 
 Build requirements:
   autoconf2.5-2.61-1
   automake1.10-1.10.1-1
-  binutils-20060817-1
-  cygport-0.3.9-1
+  binutils-20080523-2
+  cygport-0.3.12-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   libtool-2.2.2-2
@@ -32,28 +32,26 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack apr1-1.2.12-X-src.tar.bz2
+  unpack apr1-1.3.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./apr1-1.2.12-X.cygport all
+  cygport ./apr1-1.3.2-X.cygport all
 
 This will create:
-  /usr/src/apr1-1.2.12-X-src.tar.bz2
-  /usr/src/apr1-1.2.12-X.tar.bz2
-  /usr/src/libapr1-1.2.12-X.tar.bz2
-  /usr/src/libapr1-devel-1.2.12-X.tar.bz2
+  /usr/src/apr1-1.3.2-X-src.tar.bz2
+  /usr/src/apr1-1.3.2-X.tar.bz2
+  /usr/src/libapr1-1.3.2-X.tar.bz2
+  /usr/src/libapr1-devel-1.3.2-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(apr)
-  /usr/share/doc/apr1-1.2.12/Changes
-  /usr/share/doc/apr1-1.2.12/LICENSE
-
 (libapr1)
   /usr/bin/cygapr-1-0.dll
+  /usr/share/doc/apr1-1.3.2/Changes
+  /usr/share/doc/apr1-1.3.2/LICENSE
 
 (libapr1-devel)
   /usr/bin/apr-1-config
@@ -96,15 +94,18 @@ Files included in the binary packages:
   /usr/lib/libapr-1.dll.a
   /usr/lib/libapr-1.la
   /usr/lib/pkgconfig/apr-1.pc
-  /usr/share/apr-1-build/apr_rules.mk
-  /usr/share/apr-1-build/libtool
-  /usr/share/apr-1-build/make_exports.awk
-  /usr/share/apr-1-build/make_var_export.awk
-  /usr/share/apr-1-build/mkdir.sh
+  /usr/share/apr/build-1/apr_rules.mk
+  /usr/share/apr/build-1/libtool
+  /usr/share/apr/build-1/make_exports.awk
+  /usr/share/apr/build-1/make_var_export.awk
+  /usr/share/apr/build-1/mkdir.sh
 
 ------------------
 
 Port Notes:
+
+----- version 1.3.2-1 -----
+Version bump.
 
 ----- version 1.2.12-1 -----
 Version bump.
