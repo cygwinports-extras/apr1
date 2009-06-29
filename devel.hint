@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin libapr1
+requires: libapr1
 external-source: apr1
 sdesc: "Apache Portable Runtime core library (libdevel)"
 ldesc: "The mission of the Apache Portable Runtime (APR) project is to 
